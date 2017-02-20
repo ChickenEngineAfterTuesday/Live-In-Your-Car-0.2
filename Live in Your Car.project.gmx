@@ -37,7 +37,6 @@
     <sprite>sprites\sBuilding3</sprite>
     <sprite>sprites\sBuilding2</sprite>
     <sprite>sprites\sBuilding</sprite>
-    <sprite>sprites\sCarBlue</sprite>
     <sprite>sprites\sCarPink</sprite>
     <sprite>sprites\sIntersection</sprite>
     <sprite>sprites\sRoadvert</sprite>
@@ -66,6 +65,15 @@
     <sprite>sprites\sLogo</sprite>
     <sprite>sprites\sBarrel</sprite>
     <sprite>sprites\sControls</sprite>
+    <sprites name="NPC Car">
+      <sprite>sprites\sCarBlue</sprite>
+      <sprite>sprites\sCarGreen</sprite>
+      <sprite>sprites\sCarYellow</sprite>
+      <sprite>sprites\sCarPurple</sprite>
+      <sprite>sprites\sCarOrange</sprite>
+      <sprite>sprites\sCarRed</sprite>
+      <sprite>sprites\sCarSilver</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bGrass</background>
