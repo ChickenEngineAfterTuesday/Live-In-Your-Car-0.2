@@ -295,6 +295,12 @@ if(boost)
             <string>///
 
 physics_apply_impulse(other.x,other.y,400,400);
+
+with(other)
+{
+    physics_apply_impulse(x,y,-400,-400);
+    //instance_destroy();
+}
 </string>
           </argument>
         </arguments>

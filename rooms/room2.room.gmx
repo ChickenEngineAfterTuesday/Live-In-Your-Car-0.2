@@ -1692,6 +1692,8 @@
     <instance objName="oRoad" x="6240" y="1440" name="inst_3DF4D6AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oRoad" x="6240" y="2880" name="inst_D942C260" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oRoad" x="6240" y="2976" name="inst_CF6AFB0D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBarrel" x="672" y="704" name="inst_E4598DE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBarrel" x="1280" y="1440" name="inst_DFFC73AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
