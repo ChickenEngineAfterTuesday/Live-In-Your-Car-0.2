@@ -112,7 +112,6 @@
   </fonts>
   <objects name="objects">
     <object>objects\oPlayer</object>
-    <object>objects\oPlayerOld</object>
     <object>objects\control</object>
     <object>objects\oCamera</object>
     <object>objects\oText</object>
@@ -167,8 +166,10 @@
   <rooms name="rooms">
     <room>rooms\rmMenu</room>
     <room>rooms\rmControls</room>
+    <room>rooms\rmOTAcolton</room>
     <room>rooms\room2</room>
     <room>rooms\rmGame</room>
+    <room>rooms\rmOTAmatt</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
