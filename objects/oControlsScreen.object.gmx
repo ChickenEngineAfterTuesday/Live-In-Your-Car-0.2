@@ -101,7 +101,7 @@ if (((keyboard_check_pressed(vk_anykey))
     || joystick_check_button(1,9)
     || joystick_check_button(1,10)) &amp;&amp; proceed == true)
 {
-   transitionTo = room2;
+   transitionTo = room_next(room);
 }
 </string>
           </argument>
