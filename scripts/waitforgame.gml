@@ -12,7 +12,7 @@ if(loadedScriptVariables)
     
     control.timeRunning = true;
     
-    loadedScriptVariables = false; stepCompleted=true //audio_play_sound(soundtrack,5,100);;
+    loadedScriptVariables = false; stepCompleted=true audio_play_sound(soundtrack,5,100);;
     
     }
     

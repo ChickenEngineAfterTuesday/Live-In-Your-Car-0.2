@@ -9,7 +9,7 @@ if(loadedScriptVariables)
             
         if(oCamera.textIndex == string_length(oCamera.displayText)+1)
         {
-            if(oCamera.textTimeTemp == 0 && oCamera.restartText == true)//oCamera.displayText == "")
+            if(oCamera.textTimeTemp == 0 && oCamera.restartText == true)
             {
                 setText = false;
                 loadedScriptVariables = false;
