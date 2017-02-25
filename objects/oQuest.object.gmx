@@ -72,6 +72,7 @@ point = 0;
 xxpt = 0;
 yypt = 0;
 portrait = sSamplePortrait;
+setText = false;
 </string>
           </argument>
         </arguments>

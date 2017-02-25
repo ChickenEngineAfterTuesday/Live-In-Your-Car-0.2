@@ -25,12 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>viewdist = 3;
-viewx = 0;
-viewy = 0;
-viewx2 = 0;
-viewy2 = 0;
+            <string>///variables
+
 shake = 0;
+gui = true;
+personTalking = false;
+portrait = sSamplePortrait;
+text = 0;
+displayText = "";
+textIndex = 0;
+textTimeCharacter = 1;
+textTimePost = (room_speed * 5); // (5 seconds)
+textTimeTemp = 0;
+restartText = false;
+depth = -(room_height+1000);
+startingDepth = depth;
 </string>
           </argument>
         </arguments>
@@ -53,76 +62,13 @@ shake = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>viewdist = viewdist;
-viewx2 = viewx2;
-viewy2 = viewy2;
+            <string>///camera
 
+x = oPlayer.phy_position_x-view_wview[0]/2;
+y = oPlayer.phy_position_y-view_hview[0]/2;
 
-
-/*
-if(oPlayer.speed &gt; 0)
-{
-    x = oPlayer.x + lengthdir_x(64,oPlayer.direction);
-    if(oPlayer.direction &lt; 360 &amp;&amp; oPlayer.direction &gt; 180)
-    {
-        y = oPlayer.y + lengthdir_y(16,oPlayer.direction);
-    }
-    else
-    {
-        y = oPlayer.y + lengthdir_y(64,oPlayer.direction);
-    }
-}
-else if(oPlayer.speed &lt; 0)
-{
-    x = oPlayer.x - lengthdir_x(64,oPlayer.direction);
-    if(oPlayer.direction &lt; 360 &amp;&amp; oPlayer.direction &gt; 180)
-    {
-        y = oPlayer.y - lengthdir_y(16,oPlayer.direction);
-    }
-    else
-    {
-        y = oPlayer.y - lengthdir_y(64,oPlayer.direction);
-    }
-}
-
- */
- /*
-if(oPlayer.speed &gt; 0)
-{
-    x = oPlayer.phy_position_x + lengthdir_x(128*(2*abs(oPlayer.phy_speed/oPlayer.maxSpeed)),oPlayer.direction);
-    if(oPlayer.direction &lt; 360 &amp;&amp; oPlayer.direction &gt; 180)
-    {
-        y = oPlayer.y + lengthdir_y(16*(2*abs(oPlayer.speed/oPlayer.maxSpeed)),oPlayer.direction);
-    }
-    else
-    {
-        y = oPlayer.y + lengthdir_y(128*(2*abs(oPlayer.speed/oPlayer.maxSpeed)),oPlayer.direction);
-    }
-}
-else if(oPlayer.speed &lt; 0)
-{
-    x = oPlayer.x - lengthdir_x(128*(2*abs(oPlayer.speed/oPlayer.maxSpeed)),oPlayer.direction);
-    if(oPlayer.direction &lt; 360 &amp;&amp; oPlayer.direction &gt; 180)
-    {
-        y = oPlayer.y - lengthdir_y(16*(2*abs(oPlayer.speed/oPlayer.maxSpeed)),oPlayer.direction);
-    }
-    else
-    {
-        y = oPlayer.y - lengthdir_y(128*(2*abs(oPlayer.speed/oPlayer.maxSpeed)),oPlayer.direction);
-    }
-}
-*/
-x = oPlayer.phy_position_x;
-y = oPlayer.phy_position_y;
-
-
-viewx = ((x-view_wview[0]/2)*(viewdist-1)+((x+lengthdir_x(64,oPlayer.direction))-view_wview[0]/2))/viewdist;
-viewy = ((y-view_hview[0]/2)*(viewdist-1)+((y+lengthdir_y(64,oPlayer.direction))-view_hview[0]/2))/viewdist;
-viewx2 = viewx2-(viewx2-viewx)*0.4;
-viewy2 = viewy2-(viewy2-viewy)*0.4;
-
-view_xview[0] = viewx2+random(shake)-shake/2;
-view_yview[0] = viewy2+random(shake)-shake/2;
+view_xview[0] = x+random(shake)-shake/2;
+view_yview[0] = y+random(shake)-shake/2;
 
 if (shake &gt; 10){
 shake *= 0.8}
@@ -130,6 +76,162 @@ if( shake &gt; 0){
 shake -= 1}
 else{
 shake = 0;}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///debug
+/*
+show_debug_message(string(personTalking));
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///gui
+
+//drawing states
+
+if(view_visible[0])
+{
+    gui = true;
+}
+else
+{
+    gui = false;
+}
+
+if(gui)
+{
+
+    depth -= 1;
+    draw_sprite(sDashboard,0,view_xview[0], view_yview[0] + view_hview[0]); //draw the dashboard
+    
+    if(!personTalking)
+    {
+        depth -= 1;
+        draw_sprite(sHUD,0,view_xview[0], view_yview[0] + view_hview[0]); //draw the dashboard
+        depth -= 1;
+        draw_sprite_ext(sPointer,0,view_xview[0]+148,view_yview[0] + view_hview[0],1,1,0 - 180*((abs(oPlayer.phy_speed_x)+abs(oPlayer.phy_speed_y))/14),c_white,1); //draw the speed meter
+        draw_sprite_ext(sPointer,0,view_xview[0]+491,view_yview[0] + view_hview[0],1,1,0 - 180*(oPlayer.fuel/100),c_white,1); //draw the gas meter
+        draw_set_font(fConsolasCash);
+        draw_text(view_xview[0]+288,view_yview[0]+310,"$" + string(oPlayer.cash)); // display cash
+        depth -= 1; 
+    }
+    else
+    {
+        depth -= 1;
+        draw_sprite(portrait,0,view_xview[0] + 96, view_yview[0] + view_hview[0] + 3);
+        depth -= 1;
+        draw_set_font(fnt);
+        draw_set_color(c_gray)
+        draw_text_ext(view_xview[0]+162,view_yview[0]+310,displayText,20,476);
+        draw_set_color(c_orange);
+        depth -= 1;
+        draw_text_ext(view_xview[0]+164,view_yview[0]+312,displayText,20,476);
+        draw_set_color(c_white);
+        
+    }
+    
+    
+    
+    depth = startingDepth;
+}
+
+//gui logic
+
+if(text != 0)
+{
+    personTalking = true;
+    if(!restartText)
+    {
+        displayText = "";
+        textIndex = 0;
+        restartText = true;
+    }
+}
+else
+{
+    personTalking = false;
+}
+    
+if(personTalking)
+{
+    if(textTimeTemp &lt; textTimeCharacter)
+    {
+        textTimeTemp++;
+    }
+    else
+    {
+        if(textIndex != string_length(displayText)+1)
+        {
+            textIndex++;
+            if(audio_is_playing(motor))
+            {
+                audio_stop_sound(motor);
+            }
+            if(!audio_is_playing(speech))
+            {
+                audio_play_sound(speech,10,false);
+            }
+            textTimeTemp = 0;
+            displayText += string_char_at(text,textIndex);
+        }
+        else
+        {
+            if(textTimeTemp &lt; textTimePost)
+            {
+                textTimeTemp++;
+            }
+            else
+            {
+                textTimeTemp = 0;
+                text = 0;
+                restartText = false;
+                textIndex = 0;
+            }
+        }
+        
+    }
+}    
+
+
+
 </string>
           </argument>
         </arguments>

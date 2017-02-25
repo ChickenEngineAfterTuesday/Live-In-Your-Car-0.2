@@ -1,28 +1,22 @@
 //basic outline for quest engine interpreter script
-
+//show_debug_message(string(text) + " " + string(oCamera.personTalking) + "" + string(oCamera.textTimeTemp));
 if(loadedScriptVariables)
-{
-
-    if(dialogueBox != 0)
-    {
-    
-        if(instance_exists(dialogueBox))
+{       
+        if(!setText)
+        {}
+            oCamera.text = text;
+            oCamera.portrait = portrait;
+            
+        if(oCamera.textIndex == string_length(oCamera.displayText)+1)
         {
-    
+            if(oCamera.textTimeTemp == 0 && oCamera.restartText == true)//oCamera.displayText == "")
+            {
+                setText = false;
+                loadedScriptVariables = false;
+                stepCompleted=true;
+            }
+            
         }
-        else
-        {
-            dialogueBox = 0;
-            loadedScriptVariables = false;
-            stepCompleted=true;
-        }
-    
-    }
-    else
-    {
-        scrText(text,1,30,318);
-        //scrText(text,1,x,y);
-    }
     
 }
 else

@@ -122,6 +122,8 @@ draw_set_font(fConsolas);
 
 }*/
 
+//might need l8r
+/*
 if(instance_exists(oHUD))
 {
     if(oHUD.visible == true)
