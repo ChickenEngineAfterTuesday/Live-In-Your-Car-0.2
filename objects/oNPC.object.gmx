@@ -214,6 +214,7 @@ phy_rotation = -point_direction(phy_position_xprevious,phy_position_yprevious,ph
           <argument>
             <kind>1</kind>
             <string>///do the thing
+oCamera.shake = 8;
 </string>
           </argument>
         </arguments>
