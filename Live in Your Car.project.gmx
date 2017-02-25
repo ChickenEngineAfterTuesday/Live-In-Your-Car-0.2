@@ -130,25 +130,6 @@
     <object>objects\oDestination</object>
     <object>objects\oPerson</object>
     <object>objects\oWall</object>
-    <objects name="NPCars">
-      <object>objects\oNPCtarget1</object>
-      <object>objects\oNPCtarget2</object>
-      <object>objects\oNPCtarget3</object>
-      <object>objects\oNPCtarget4</object>
-      <object>objects\oNPCtarget5</object>
-      <object>objects\oNPCtarget6</object>
-      <object>objects\oNPCtarget7</object>
-      <object>objects\oNPCtarget8</object>
-      <object>objects\oNPC</object>
-      <object>objects\oNPC7</object>
-      <object>objects\oNPC8</object>
-      <object>objects\oNPC6</object>
-      <object>objects\oNPC1</object>
-      <object>objects\oNPC4</object>
-      <object>objects\oNPC5</object>
-      <object>objects\oNPC3</object>
-      <object>objects\oNPC2</object>
-    </objects>
     <object>objects\oPoint</object>
     <object>objects\oBarrel</object>
     <object>objects\oInsidecorner</object>
@@ -156,6 +137,9 @@
     <object>objects\oRoundaboutUL</object>
     <object>objects\oRoundaboutDL</object>
     <object>objects\oBarricade</object>
+    <object>objects\oNPCController</object>
+    <object>objects\oNPC</object>
+    <object>objects\oNPCSpawner</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmMenu</room>

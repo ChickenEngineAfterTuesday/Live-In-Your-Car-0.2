@@ -63,22 +63,6 @@ cash = 35;
 fueltimer = 15;
 alarm[0] = room_speed * fueltimer;
 canBuyGas = true;
-
-
-/*
-maxSpeed = 40;
-maxTurnAccel = 10;
-turnSpeed = 6;
-turnAccel = 0;
-angularDrag = 0.7;
-drag = 0.95;
-accel = 1.5;
-var lastDirection;
-
-drift = false;
-spinTimer = 0;
-spinoutDirection = 0;
-var dirToObj;
 </string>
           </argument>
         </arguments>
@@ -149,7 +133,9 @@ alarm[0] = room_speed * fueltimer;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Controls
+            <string>depth = -y;
+
+///Controls
 image_angle = direction;
 
 //Particle systems
@@ -194,43 +180,32 @@ if(keyboard_check(vk_down) || joystick_check_button(1,3)) //Deceleration is B on
     }
 }
 
-if((keyboard_check(vk_left) &amp;&amp; keyboard_check(vk_up)) || (joystick_direction(id)=100 &amp;&amp; joystick_check_button(1,4))) //Left turn is &lt;- on controller or Left Arrow on keyboard
+if((keyboard_check(vk_left) &amp;&amp; /*keyboard_check(vk_up))*/ phy_speed &gt; 2) || (joystick_direction(id)=100 &amp;&amp; phy_speed &gt; 2))/*joystick_check_button(1,4))*/ //put this where physpeed &gt; 1 is //Left turn is &lt;- on controller or Left Arrow on keyboard
 { //Steering left while moving forward
     
     phy_rotation -= 2.7
 }
 
-if((keyboard_check(vk_right) &amp;&amp; keyboard_check(vk_up)) || (joystick_direction(id)=102 &amp;&amp; joystick_check_button(1,4))) //Right turn is -&gt; on controller or Right Arrow on keyboard
+if((keyboard_check(vk_right) &amp;&amp; phy_speed &gt; 2)  || (joystick_direction(id)=102 &amp;&amp; phy_speed &gt; 2)) //joystick_check_button(1,4)) //Right turn is -&gt; on controller or Right Arrow on keyboard
 { //Steering right while moving forward
     phy_rotation += 2.7;
     
 }
-
-if((keyboard_check(vk_left) &amp;&amp; keyboard_check(vk_down)) || (joystick_direction(id)=100 &amp;&amp; joystick_check_button(1,3))) //Left turn is &lt;- on controller or Left Arrow on keyboard
+/*
+if((keyboard_check(vk_left) &amp;&amp; keyboard_check(vk_down)) || (joystick_direction(id)=100 &amp;&amp; phy_speed &gt; 1)) //joystick_check_button(1,3) //Left turn is &lt;- on controller or Left Arrow on keyboard
 { //Steering left while moving backward
     
     phy_rotation += 2.7
 }
 
-if((keyboard_check(vk_right) &amp;&amp; keyboard_check(vk_down)) || (joystick_direction(id)=102 &amp;&amp; joystick_check_button(1,3))) //Right turn is -&gt; on controller or Right Arrow on keyboard
+if((keyboard_check(vk_right) &amp;&amp; keyboard_check(vk_down)) || (joystick_direction(id)=102 &amp;&amp; phy_speed &gt; 1)) //joystick_check_button(1,3)) //Right turn is -&gt; on controller or Right Arrow on keyboard
 { //Steering right while moving backward
     phy_rotation -= 2.7;
     
 }
-
+*/
 if(keyboard_check(vk_alt) || joystick_check_button(1,7)) //Map is L on controller or Space on keyboard
-{
-    /*if(view_visible[0] = true)
-    {
-        view_visible[0] = false;
-        view_visible[1] = true;
-    }
-    else
-    {
-        view_visible[1] = false;
-        view_visible[0] = true;
-    }*/
-    
+{   
     view_visible[1] = true;
     view_visible[0] = false;
 }
@@ -439,12 +414,17 @@ draw_self();
 //draw_text(x + 150,y+50, string(speed));
 //draw_line(x,y,x+lengthdir_x(speed*10,direction),y+lengthdir_y(speed*10,direction));
 
+draw_self();
+
+draw_text(x,y,string(fps_real))
+
 if(view_visible[1] == true)
 {
     draw_set_color(c_yellow);
     draw_circle(oPlayer.phy_position_x,oPlayer.phy_position_y,100,1);
     draw_set_color(c_white);
 }
+
 
 /*draw_text(x,y,speedhowlong);//
 draw_text(x+30,y,speedtimer);*/

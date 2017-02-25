@@ -67,6 +67,9 @@ startingDepth = depth;
 x = oPlayer.phy_position_x-view_wview[0]/2;
 y = oPlayer.phy_position_y-view_hview[0]/2;
 
+//x = oTest.phy_position_x-view_wview[0]/2;
+//y = oTest.phy_position_y-view_hview[0]/2;
+
 view_xview[0] = x+random(shake)-shake/2;
 view_yview[0] = y+random(shake)-shake/2;
 
