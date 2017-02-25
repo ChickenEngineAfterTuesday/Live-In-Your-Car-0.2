@@ -56,9 +56,7 @@ var dir, dist, dx, dy, nspeed, forcex, forcey, choice;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = -y
-
-if(path != -1)
+            <string>if(path != -1)
 {
 
     pointx = path_get_point_x(path,pointnumber);
@@ -103,28 +101,6 @@ else
 phy_rotation = -point_direction(phy_position_xprevious,phy_position_yprevious,phy_position_x,phy_position_y);
 
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="oNPC">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>
@@ -236,7 +212,7 @@ phy_rotation = -point_direction(phy_position_xprevious,phy_position_yprevious,ph
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();/*
+            <string>draw_self();
 draw_set_color(c_red);
 draw_path(path,target.x,target.y,1);
 draw_set_color(c_white);
