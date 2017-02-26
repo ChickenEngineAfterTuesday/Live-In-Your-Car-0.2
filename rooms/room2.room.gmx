@@ -1196,7 +1196,6 @@
     <instance objName="oRoadvert" x="5280" y="384" name="inst_51D3C1D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oRoadvert" x="5280" y="480" name="inst_93443EB9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oRoadvert" x="5184" y="480" name="inst_1464AD5A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oPlayer" x="3872" y="2176" name="inst_3BE29290" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oCamera" x="3872" y="2144" name="inst_75D76667" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oSandwichShop" x="384" y="384" name="inst_20325D32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oGasStation" x="1728" y="1152" name="inst_23A78F47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1669,7 +1668,13 @@
     <instance objName="oBarrel" x="672" y="704" name="inst_E4598DE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBarrel" x="1280" y="1440" name="inst_DFFC73AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oNPCController" x="-448" y="2880" name="inst_7811AE38" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oNPCSpawner" x="4000" y="2176" name="inst_738726D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oNPCSpawner" x="5248" y="1760" name="inst_738726D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oNPCSpawner" x="5280" y="1760" name="inst_C15E43B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oNPCSpawner" x="5312" y="1760" name="inst_AEEB7658" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oNPCSpawner" x="5344" y="1760" name="inst_6AC02CFD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oNPCSpawner" x="5216" y="1760" name="inst_D7A0AEE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oNPCSpawner" x="5184" y="1760" name="inst_1568A356" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oPlayerCinematic" x="3872" y="2240" name="inst_12B74D34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

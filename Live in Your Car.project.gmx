@@ -139,6 +139,7 @@
     <object>objects\oBarricade</object>
     <object>objects\oNPCController</object>
     <object>objects\oNPC</object>
+    <object>objects\oPlayerCinematic</object>
     <object>objects\oNPCSpawner</object>
   </objects>
   <rooms name="rooms">
